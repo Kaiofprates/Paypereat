@@ -28,11 +28,24 @@ export default StyleSheet.create({
     borderWidth:1,
     borderColor:'#CCC'
   },
+
+  inputFocus: {
+    paddingLeft:15,
+    backgroundColor: "#2BB673",
+    width:windowWidth-15,
+    height: 50,
+    width: windowWidth - 50,
+    marginBottom: 20,
+    borderRadius: 4,
+    borderWidth:1,
+    borderColor:'#CCC'  
+  },
+
   title: {
-    fontSize: 30,
+    fontSize: 28,
     fontStyle: "normal",
     fontWeight: "bold",
-    color: "#9B9B9B"
+    color: "#000"
   },
   button: {
 
@@ -47,5 +60,18 @@ export default StyleSheet.create({
     color: "white",
     fontWeight: "bold",
 
+  },
+
+  subtitle: {
+    width:windowWidth-20,
+    textAlign:'center',
+    justifyContent:'flex-start',
+    marginTop:-30.
+  },
+
+  goAccout: {
+    flexDirection:'row',
+    justifyContent:'flex-end',
   }
+
 });

@@ -1,6 +1,7 @@
 import React, {
-  useState
+  useState,
 } from 'react';
+
 import {
   SafeAreaView,
   Text,
@@ -10,53 +11,66 @@ import {
 } from 'react-native';
 
 import styles from './styles';
+import Icon from 'react-native-vector-icons/Feather';
 
 export default function Login({ navigation }) {
+
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-         <Text style={styles.title}> Cadastrar </Text>
-      <View>
-        <TextInput
-          title="Nome"
-          style={styles.input}
-          placeholder="Nome"
-        />
+        <Text style={styles.title}> Cadastrar </Text>
+        <Text style={styles.subtitle}>Está é uma tela de cadastro e estou digitando este texto pois não tenho</Text>
+        <View>
+          <TextInput
+            title="Nome"
+            style={styles.input}
+            placeholder="Nome"
+          />
 
-        <TextInput
-          title="Email"
-          style={styles.input}
-          placeholder="Nome"
-        />
+          <TextInput
+            title="Email"
+            style={styles.input}
+            placeholder="Email"
+          />
 
-        <TextInput
-          title="Telefone"
-          style={styles.input}
-          placeholder="Nome"
-        />
+          <TextInput
+            title="Telefone"
+            style={styles.input}
+            placeholder="Telefone"
+          />
 
-        <TextInput
-          title="Senha"
-          style={styles.input}
-          placeholder="Nome"
-        />
+          <TextInput
+            title="Senha"
+            style={styles.input}
+            placeholder="Senha"
+          />
 
-        <TextInput
-          title="Reinsira a Senha"
-          style={styles.input}
-          placeholder="Nome"
-        />
+          <TextInput
+            title="reinsertPassword"
+            style={styles.input}
+            placeholder="Reinsira a Senha"
+          />
 
-      </View>
+          <View style={styles.goAccout}>
+            <Text>Já tem uma conta?</Text>
+            <Icon
+              color='#34CB79'
+              name='arrow-right'
+              size={24}
+            />
+          </View>
 
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.text}>
-          INCREVER-SE
+
+        </View>
+
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.text}>
+            INCREVER-SE
      </Text>
-      </TouchableOpacity>
+        </TouchableOpacity>
       </View>
-     
+
 
     </SafeAreaView>
   )
