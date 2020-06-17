@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 
 import styles from './styles';
-import { TextInput } from 'react-native-paper';
 
 
 export default function Login({ navigation }) {
