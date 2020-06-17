@@ -1,19 +1,29 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
 
-export default function App() {
+import Login from './components/login'
+import Mapa from './components/mapa'
+import Register from './components/register'
+import Intro from './components/intro/index'
+
+const Stack = createStackNavigator();
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{
+        headerShown: false,
+        cardStyleInterpolator: CardStyleInterpolators.forScaleFromCenterAndroid,
+      }}>
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Intro" component={Intro}/>
+        <Stack.Screen name="Mapa" component={Mapa}/>
+        <Stack.Screen name="Register" component={Register}/>
+
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
