@@ -3,9 +3,9 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#F2F0F0'
+    backgroundColor: '#FFF'
   },
   input: {
       height: 50,
@@ -23,7 +23,7 @@ export default StyleSheet.create({
   },
   compra:{
 
-  backgroundColor: "#02CCC0",
+  backgroundColor: "#2BB673",
   borderRadius: 8,
   height: 50,
   width: 310,
