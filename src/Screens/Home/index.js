@@ -6,8 +6,9 @@ import { ScrollView } from 'react-native-gesture-handler';
 import alface from '../../assets/Products/alface.png';
 import Card from '../../Components/Card';
 import Product from '../../Components/Product';
+import { Button } from 'react-native-paper';
 
-export default function Login({ navigation }) {
+export default function HomeScreen(props) {
 
     const list = [
         {
@@ -24,6 +25,9 @@ export default function Login({ navigation }) {
         }
     ]
 
+    const handleProductClick = () => {
+        props.navigation.navigate('ProductDetail');
+    }
 
 
 
@@ -49,6 +53,7 @@ export default function Login({ navigation }) {
                     </ScrollView>
                     <Text style={styles.productInitialText}>Produtos</Text>
                     <Product/>
+                    <Button onPress={handleProductClick}>Olá</Button>
                 </View>
             </View>
 

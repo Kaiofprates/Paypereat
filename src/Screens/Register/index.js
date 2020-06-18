@@ -13,7 +13,7 @@ import {
 import styles from './styles';
 import Icon from 'react-native-vector-icons/Feather';
 
-export default function Login({ navigation }) {
+export default function Register({ navigation }) {
 
 
   return (

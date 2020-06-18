@@ -63,5 +63,9 @@ export default StyleSheet.create({
     width:windowWidth,
     textAlign:'left',
     padding:20,
+  },
+  buttonTest: {
+    width:100,
+    height:40,
   }
 });

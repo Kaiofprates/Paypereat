@@ -17,7 +17,7 @@ import { Input, Button } from 'react-native-elements'
 import Icon from 'react-native-vector-icons/Feather';
 
 
-export default function Login({ navigation }) {
+export default function StarterScreen({ navigation }) {
 
     const [eye, setEye] = useState(true)
 
