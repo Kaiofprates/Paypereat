@@ -20,7 +20,9 @@ export default function Login({ navigation }) {
       <Image source={image} />
 
       <View>
-        <TouchableOpacity style={styles.compra}>
+        <TouchableOpacity style={styles.compra} onPress={() => {
+          navigation.navigate('Home')
+        }}>
           <Text style={styles.text}>
             Quero Comprar
      </Text>
