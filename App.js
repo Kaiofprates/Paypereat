@@ -3,11 +3,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
 import { Text } from 'react-native';
 
-import Login from './components/login'
-import Mapa from './components/mapa'
-import Register from './components/register'
-import Intro from './components/intro/index'
-import Home from './components/Home'
+import Login from './src/Screens/Login'
+import Mapa from './src/Screens/Mapa'
+import Register from './src/Screens/Register'
+import Intro from './src/Screens/Intro'
+import Home from './src/Screens/Home'
 
 const Stack = createStackNavigator();
 

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Text,  View, Image } from 'react-native';
-import styles from './styles';
+import styles from '../../Screens/Home/styles';
 import alface from '../../assets/Products/alface.png';
 
 export default function Card(props){
