@@ -47,6 +47,7 @@ export default function Login({ navigation }) {
                             </ScrollView>
                         </View>
                     </ScrollView>
+                    <Text style={styles.productInitialText}>Produtos</Text>
                     <Product/>
                 </View>
             </View>

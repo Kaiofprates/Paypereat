@@ -26,9 +26,6 @@ export default StyleSheet.create({
   scroll: {
       width:windowWidth,
   },
-  scrollArea: {
-      height:300,
-  }, 
   sugestionText: {
      padding:20,
      fontSize:16,
@@ -59,7 +56,12 @@ export default StyleSheet.create({
   },
 
   scrollProducts:{
-      width:windowWidth,    
+      width:windowWidth,
+      alignItems:'center'    
   },
-  
+  productInitialText: {
+    width:windowWidth,
+    textAlign:'left',
+    padding:20,
+  }
 });
