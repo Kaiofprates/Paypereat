@@ -4,8 +4,21 @@ import styles from './styles';
 import Icon from 'react-native-vector-icons/Feather';
 import { ScrollView } from 'react-native-gesture-handler';
 import alface from '../../assets/Products/alface.png';
+import Card from './card'
 
 export default function Login({ navigation }) {
+
+    const list  = [
+        {
+            name: 'Alface'
+        },
+        {
+            name: 'Cebola'
+        },
+        {
+            name: 'cenoura'
+        }
+    ]
 
 
 
@@ -26,20 +39,9 @@ export default function Login({ navigation }) {
                                 horizontal={true}
                                 showsHorizontalScrollIndicator={false}
                                 decelerationRate="fast">
-                                <View style={styles.boxRecomendations}>
-                                    <Image source={alface} style={styles.imageRecomendations} />
-                                    <Text style={styles.recomendationsText}>Alfaçe Verde</Text>
-                                </View>
-
-                                <View style={styles.boxRecomendations}>
-                                    <Image source={alface} style={styles.imageRecomendations} />
-                                    <Text style={styles.recomendationsText}>Alfaçe Verde</Text>
-                                </View>
-
-                                <View style={styles.boxRecomendations}>
-                                    <Image source={alface} style={styles.imageRecomendations} />
-                                    <Text style={styles.recomendationsText}>Alfaçe Verde</Text>
-                                </View>
+                                    {
+                                        list.map((e)=> <Card name={e.name} />)
+                                    }
                             </ScrollView>
                         </View>
 
