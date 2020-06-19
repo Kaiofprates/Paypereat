@@ -104,7 +104,7 @@ export default function ProductCart() {
     return (
         <ProductCard style={{
             backgroundColor: "white",
-            elevation: 10,
+            elevation: 8,
             shadowColor: '#000',
             shadowOffset: { width: 0, height: 3 },
             shadowOpacity: 0.5,
@@ -125,8 +125,7 @@ export default function ProductCart() {
                     <SelecAmount>
                         <PlusButton style={{
                             backgroundColor: "white",
-                            borderRadius: 20,
-                            elevation: 10,
+                            elevation: 8,
                             shadowColor: '#000',
                             shadowOffset: { width: 0, height: 3 },
                             shadowOpacity: 0.5,
@@ -136,7 +135,7 @@ export default function ProductCart() {
                         <SubtractButton style={{
                             backgroundColor: "white",
                             borderRadius: 20,
-                            elevation: 10,
+                            elevation: 8,
                             shadowColor: '#000',
                             shadowOffset: { width: 0, height: 3 },
                             shadowOpacity: 0.5,
