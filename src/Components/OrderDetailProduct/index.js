@@ -31,7 +31,7 @@ const OrderAddress = styled.Text`
 const OrderAmount = styled.Text``;
 const OrderValue = styled.Text`
     fontSize:16px;
-`;
+`; 
 
 const DetailButton = styled.TouchableOpacity`
     width:110px;
@@ -41,7 +41,7 @@ const DetailButton = styled.TouchableOpacity`
     borderWidth:1px;
     borderRadius:10px;
 `;
-const TextDetail = styled.Text`
+const  TextDetail = styled.Text`
     fontSize:15px;
 `;
 const StatusOrder = styled.Text`
@@ -49,7 +49,7 @@ const StatusOrder = styled.Text`
     color:#2AA952;
 `;
 
-export default function Order() {
+export default function OrderDetailProduct() {
     return (
         <OrderContainer style={{
             elevation: 8,
@@ -78,6 +78,7 @@ export default function Order() {
                 </DetailButton>
 
                 <StatusOrder>Enviado</StatusOrder>
+
             </OrderInfo>
 
         </OrderContainer>
