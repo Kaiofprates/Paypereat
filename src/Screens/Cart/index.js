@@ -54,7 +54,7 @@ export default function Cart(props) {
                     <TotalValue>R$ 50,00</TotalValue>
                 </TotalAmount>
                 <Button onPress={goToCheckout}>Ir para Checkout</Button>
-               {/*  <DefaultButton width="90%" height="50px"/> */}
+               {/*  <DefaultButton width="90%" height="50px" name="FINALIZAR COMPRA"/> */}
             </View>
             
         </SafeAreaView>

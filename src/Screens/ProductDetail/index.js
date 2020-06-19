@@ -3,6 +3,8 @@ import { SafeAreaView, Picker } from 'react-native';
 import styled from 'styled-components';
 import alfaceLg from '../../assets/Products/alfacelg.png';
 import shoppingCart from '../../assets/Icons/Cart/shopping-cart.png';
+
+
 const ProductArea = styled.View`
     flexDirection:column;
     justifyContent:center;

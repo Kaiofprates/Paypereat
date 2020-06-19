@@ -8,7 +8,7 @@ import Card from '../../Components/Card';
 import Product from '../../Components/Product';
 import { Button } from 'react-native-paper';
 
-export default function HomeScreen({navigation}) {
+export default function HomeScreen(props) {
 
     const list = [
         {

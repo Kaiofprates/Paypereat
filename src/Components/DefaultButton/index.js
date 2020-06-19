@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 export default function DefaultButton(props) {
-
+    const btnName = props.name;
     const ProductText = styled.Text`
     color:#FFF;
 `;
@@ -24,7 +24,7 @@ export default function DefaultButton(props) {
 
     return (
         <ProductAddButton>
-            <ProductText>Finalizar Compra</ProductText>
+            <ProductText>{btnName}</ProductText>
         </ProductAddButton>
     );
 }
