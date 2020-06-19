@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { SafeAreaView, Text, TouchableOpacity, View, Image, TextInput } from 'react-native';
 import styled from 'styled-components';
-
+import { Button } from 'react-native-paper';
+import Order from '../../Components/Order';
 
 const ButtonsOptions = styled.View`
     flexDirection:row;
@@ -14,25 +15,46 @@ const ButtonsOptions = styled.View`
 const ButtomOptions = styled.TouchableOpacity`
     width:25%;
     height:30px;
-    backgroundColor:#000;
     borderRadius:20px;
+    alignItems:center;
+    justifyContent:center;
 `;
 
-export default function Orders() {
+const ButtonText = styled.Text`
+    color:#FFF;
+    fontWeight:bold;
+`;
+const OrdersContainer = styled.ScrollView`
+    width:100%;
+
+`;
+
+export default function Orders(props) {
 
     return (
         <SafeAreaView >
             <ButtonsOptions>
-                <ButtomOptions>
-
+                <ButtomOptions style={{ backgroundColor: '#000' }}>
+                    <ButtonText>Recebido</ButtonText>
                 </ButtomOptions>
-                <ButtomOptions>
+                <ButtomOptions style={{ backgroundColor: '#219653' }}>
 
+                    <ButtonText>Aprovado</ButtonText>
                 </ButtomOptions>
-                <ButtomOptions>
-
+                <ButtomOptions style={{ backgroundColor: '#EB5757' }}>
+                    <ButtonText>Cancelado</ButtonText>
                 </ButtomOptions>
             </ButtonsOptions>
+            <OrdersContainer horizontal={false} style={{
+                width:'100%',
+            }}>
+                <Order/>
+                <Order/>
+                <Order/>
+                <Order/>
+                <Order/>
+                <Order/>
+            </OrdersContainer>
         </SafeAreaView>
     )
 }
