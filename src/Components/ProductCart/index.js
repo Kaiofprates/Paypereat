@@ -126,6 +126,7 @@ export default function ProductCart() {
                         <PlusButton style={{
                             backgroundColor: "white",
                             elevation: 8,
+                            borderRadius: 20,
                             shadowColor: '#000',
                             shadowOffset: { width: 0, height: 3 },
                             shadowOpacity: 0.5,
