@@ -30,7 +30,6 @@ export default function HomeScreen(props) {
     }
 
 
-
     return (
         <SafeAreaView style={styles.container} >
             <View style={styles.content}>

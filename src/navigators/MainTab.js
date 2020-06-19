@@ -2,8 +2,8 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../Screens/Home';
 import Donation from '../Screens/Donation';
-import Cart from '../Screens/Cart';
-import Orders from '../Screens/Orders';
+import CheckoutStack from './CheckoutStack';
+import OrdersStack from './OrdersStack';
 import Profile from '../Screens/Profile';
 import { Image, Text } from 'react-native';
 import MainStack from './MainStack';
@@ -32,7 +32,7 @@ export default () => {
                     }} />
                 )
             }} />
-            <Tab.Screen name="Cart" component={Cart} options={{
+            <Tab.Screen name="Sacola" component={CheckoutStack} options={{
                 tabBarIcon: ({ color, size }) => (
                     <Image source={require('../assets/Icons/TabCart/cart.png')} style={{
                         width: 25,
@@ -40,7 +40,7 @@ export default () => {
                     }} />
                 )
             }} />
-            <Tab.Screen name="Pedidos" component={Orders} options={{
+            <Tab.Screen name="Pedidos" component={OrdersStack} options={{
                 tabBarIcon: ({ color, size }) => (
                     <Image source={require('../assets/Icons/TabOrder/order.png')} style={{
                         width: 25,
