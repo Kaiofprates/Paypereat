@@ -3,6 +3,7 @@ import { SafeAreaView, Text, TouchableOpacity, View, Image, TextInput } from 're
 import Address from '../../Components/Address';
 import styled from 'styled-components';
 import DefaultButton from '../../Components/DefaultButton';
+import { Button } from 'react-native-paper';
 
 const TitleShipping = styled.Text`
     fontSize:20px;
@@ -50,7 +51,10 @@ const TotalOrder = styled.View`
 `;
 
 
-export default function Checkout() {
+export default function Checkout(props) {
+        const handleFinishClick = () => {
+            props.navigation.navigate('CheckoutFinish');
+        }
 
     return (
         <SafeAreaView style={{
@@ -81,7 +85,8 @@ export default function Checkout() {
                         <OrderValueTextBold>R$ 20,00</OrderValueTextBold>
                     </TotalOrder>
                 </ResumeBuy>
-                <DefaultButton width="90%" height="50px" name="ENVIAR PEDIDO" />
+                <Button onPress={handleFinishClick}>Enviar Pedido</Button>
+               {/*  <DefaultButton width="90%" height="50px" name="ENVIAR PEDIDO" /> */}
             </BottomShipingContent>
 
         </SafeAreaView>

@@ -32,7 +32,7 @@ export default () => {
                     }} />
                 )
             }} />
-            <Tab.Screen name="Cart" component={CheckoutStack} options={{
+            <Tab.Screen name="Sacola" component={CheckoutStack} options={{
                 tabBarIcon: ({ color, size }) => (
                     <Image source={require('../assets/Icons/TabCart/cart.png')} style={{
                         width: 25,
