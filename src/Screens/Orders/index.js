@@ -1,25 +1,38 @@
 import React, { useState } from 'react';
 import { SafeAreaView, Text, TouchableOpacity, View, Image, TextInput } from 'react-native';
 import styled from 'styled-components';
-import { Button } from 'react-native-paper';
 
 
-const ScrollOptions = styled.ScrollView``;
+const ButtonsOptions = styled.View`
+    flexDirection:row;
+    width:100%;
+    height:60px;
+    alignItems:center;
+    justifyContent:space-around;
+
+`;
 const ButtomOptions = styled.TouchableOpacity`
-    width:100px;
-    height:50px;
-    backgroundColor:#FFF;
+    width:25%;
+    height:30px;
+    backgroundColor:#000;
+    borderRadius:20px;
 `;
 
 export default function Orders() {
 
     return (
         <SafeAreaView >
-            <ScrollOptions>
+            <ButtonsOptions>
                 <ButtomOptions>
 
                 </ButtomOptions>
-            </ScrollOptions>
+                <ButtomOptions>
+
+                </ButtomOptions>
+                <ButtomOptions>
+
+                </ButtomOptions>
+            </ButtonsOptions>
         </SafeAreaView>
     )
 }
