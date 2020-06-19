@@ -2,7 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../Screens/Home';
 import Donation from '../Screens/Donation';
-import Cart from '../Screens/Cart';
+import CheckoutStack from './CheckoutStack';
 import Orders from '../Screens/Orders';
 import Profile from '../Screens/Profile';
 import { Image, Text } from 'react-native';
@@ -32,7 +32,7 @@ export default () => {
                     }} />
                 )
             }} />
-            <Tab.Screen name="Cart" component={Cart} options={{
+            <Tab.Screen name="Cart" component={CheckoutStack} options={{
                 tabBarIcon: ({ color, size }) => (
                     <Image source={require('../assets/Icons/TabCart/cart.png')} style={{
                         width: 25,

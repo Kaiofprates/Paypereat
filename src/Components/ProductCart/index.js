@@ -8,7 +8,7 @@ import subtractImage from '../../assets/minus.png';
 
 const ProductCard = styled.View`
     flexDirection:row;
-    marginTop:40px;
+    marginBottom:25px;
     width:90%;
     borderRadius:6px;
     height:100px;
