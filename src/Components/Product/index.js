@@ -20,11 +20,11 @@ export default function Product() {
                 <View style={styles.contentIniProduct}>
                     <Text style={styles.productText}>Alfaçe Verde</Text>
                     <View style={styles.starProduct}>
-                        <Image style={styles.productImage} source={star} />
-                        <Image style={styles.productImage} source={star} />
-                        <Image style={styles.productImage} source={star} />
-                        <Image style={styles.productImage} source={star} />
-                        <Image style={styles.productImage} source={star} />
+                        <Image style={styles.productStars} source={star} />
+                        <Image style={styles.productStars} source={star} />
+                        <Image style={styles.productStars} source={star} />
+                        <Image style={styles.productStars} source={star} />
+                        <Image style={styles.productStars} source={star} />
                     </View>
                 </View>
                 <Text style={styles.productDescription}>O seu filho da puta tá olhando o quê aqui, vai capinar um lote</Text>

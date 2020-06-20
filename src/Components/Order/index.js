@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useNavigation } from '@react-navigation/native';
 
 const OrderContainer = styled.View`
     width:90%;
@@ -50,6 +51,14 @@ const StatusOrder = styled.Text`
 `;
 
 export default function Order() {
+
+    const navigation = useNavigation();
+
+    const handleDetailOrder = () => {
+        navigation.navigate('OrderDetail');
+    }
+
+
     return (
         <OrderContainer style={{
             elevation: 8,
@@ -73,7 +82,7 @@ export default function Order() {
             </OrderInfo>
 
             <OrderInfo>
-                <DetailButton>
+                <DetailButton onPress={handleDetailOrder}>
                     <TextDetail>Detalhes</TextDetail>
                 </DetailButton>
 
