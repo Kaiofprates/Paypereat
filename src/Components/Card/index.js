@@ -4,10 +4,10 @@ import { Text,  View, Image, Dimensions } from 'react-native';
 import styles from '../../Screens/Home/styles';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import styled from 'styled-components';
+import { useNavigation } from '@react-navigation/native';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
-
 const boxRecWidth = Math.round((windowWidth/2)-40);
 
 const BoxRecomendations = styled.View`
@@ -15,9 +15,6 @@ const BoxRecomendations = styled.View`
     height: ${boxRecWidth}px;
     alignItems:center;
     justifyContent:center;
-    marginLeft:15px;
-    marginRight:15px;
-    borderWidth:1px;
     borderColor:#EEEEEE;
     borderRadius:5px;
 
@@ -34,14 +31,24 @@ const ProductName = styled.Text`
 
 export default function Card(props){
 
+     const navigation = useNavigation();
+
+    const goToDesctiption = () => {
+        navigation.navigate('ProductDetail');
+    }
+
+
     return(
-        <TouchableOpacity  style={{
+        <TouchableOpacity onPress={goToDesctiption}  style={{
             backgroundColor: "white",
-            elevation: 3,
+            elevation: 2,
             shadowColor: '#000',
             shadowOffset: { width: 0, height: 3 },
             shadowOpacity: 0.5,
             shadowRadius: 5,
+            marginLeft:15,
+            marginRight:15,
+            marginBottom:5,
         }} > 
         <BoxRecomendations>
         <ProducImage source={{ uri: props.img}}/>

@@ -43,7 +43,8 @@ export default StyleSheet.create({
   productInitialText: {
     width:windowWidth,
     textAlign:'left',
-    padding:20,
+    fontSize:16,
+    padding:15,
   },
   buttonTest: {
     width:100,
