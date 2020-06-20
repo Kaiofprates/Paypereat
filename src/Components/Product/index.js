@@ -7,9 +7,12 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function Product({ navigation }) {
 
+    const handleProductClick = () => {
+        navigation.navigate('ProductDetail');
+    }
 
     return (
-        <TouchableOpacity style={styles.boxProducts}>
+        <TouchableOpacity style={styles.boxProducts} onPress={handleProductClick}>
             <Image source={alface} style={styles.imageRecomendations} />
             <View style={styles.containerProduct}>
                 <View style={styles.contentIniProduct}>
