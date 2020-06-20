@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Product from '../Product';
 import { Text, Image, View } from 'react-native';
 import styled from 'styled-components';
@@ -95,7 +95,10 @@ const Price = styled.Text`
 `;
 
 
-export default function ProductCart() {
+export default function ProductCart( props ) {
+     
+const [amount, setAmount ] = useState(props.amount) 
+
 
     const handleProductPoints = () => {
         alert('Botão pressionado');
@@ -131,8 +134,10 @@ export default function ProductCart() {
                             shadowOffset: { width: 0, height: 3 },
                             shadowOpacity: 0.5,
                             shadowRadius: 5,
-                        }}><PlusImage source={plusImage} /></PlusButton>
-                        <QuantityItem>1</QuantityItem>
+                        }}
+                        onPress={()=> setAmount(parseInt(amount)+1)}
+                        ><PlusImage source={plusImage} /></PlusButton>
+                        <QuantityItem>{amount}</QuantityItem>
                         <SubtractButton style={{
                             backgroundColor: "white",
                             borderRadius: 20,
@@ -141,7 +146,9 @@ export default function ProductCart() {
                             shadowOffset: { width: 0, height: 3 },
                             shadowOpacity: 0.5,
                             shadowRadius: 5,
-                        }}><SubtractImage source={subtractImage} /></SubtractButton>
+                        }}
+                        onPress={()=> parseInt(amount) > 0 ? setAmount(parseInt(amount) - 1) : '0'}
+                        ><SubtractImage source={subtractImage} /></SubtractButton>
                     </SelecAmount>
 
                     <Price>R$ 12,00</Price>

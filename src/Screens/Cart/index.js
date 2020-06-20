@@ -38,11 +38,11 @@ export default function Cart(props) {
                 width: '100%',
                 height: '81%',
             }}>
-                <ProductCart />
-                <ProductCart />
-                <ProductCart />
-                <ProductCart />
-                <ProductCart />
+                <ProductCart amount="3" />
+                <ProductCart amount="4" />
+                <ProductCart amount="5" />
+                <ProductCart amount="1" />
+                <ProductCart amount="2" />
 
             </ScrollView>
             <View style={{
