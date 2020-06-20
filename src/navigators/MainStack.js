@@ -19,10 +19,6 @@ export default () => {
             <MainStack.Screen name="ProductDetail" component={ProductDetail} options={({ navigation }) => ({
                 headerShown: false,
             })} />
-
-            <MainStack.Screen name="Product" component={Product} options={({ navigation }) => ({
-                headerShown: false,
-            })} />
         </MainStack.Navigator>
     );
 }

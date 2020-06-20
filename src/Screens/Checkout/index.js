@@ -85,8 +85,7 @@ export default function Checkout(props) {
                         <OrderValueTextBold>R$ 20,00</OrderValueTextBold>
                     </TotalOrder>
                 </ResumeBuy>
-                <Button onPress={handleFinishClick}>Enviar Pedido</Button>
-               {/*  <DefaultButton width="90%" height="50px" name="ENVIAR PEDIDO" /> */}
+               <DefaultButton width="90%" height="50px" name="ENVIAR PEDIDO" goToScreen="CheckoutFinish" />
             </BottomShipingContent>
 
         </SafeAreaView>

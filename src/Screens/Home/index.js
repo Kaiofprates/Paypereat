@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import { SafeAreaView, Text, TouchableOpacity, View, Image, TextInput } from 'react-native';
 import styles from './styles';
-import Icon from 'react-native-vector-icons/Feather';
 import { ScrollView } from 'react-native-gesture-handler';
-import alface from '../../assets/Products/alface.png';
 import Card from '../../Components/Card';
 import Product from '../../Components/Product';
-import { Button } from 'react-native-paper';
 
-export default function HomeScreen(props) {
+export default function HomeScreen() {
 
     const list = [
         {
@@ -24,10 +21,6 @@ export default function HomeScreen(props) {
             name: 'cenoura'
         }
     ]
-
-    const handleProductClick = () => {
-        props.navigation.navigate('ProductDetail');
-    }
 
 
     return (
@@ -52,7 +45,7 @@ export default function HomeScreen(props) {
                     </ScrollView>
                     <Text style={styles.productInitialText}>Produtos</Text>
                     <Product/>
-                    <Button onPress={handleProductClick}>Olá</Button>
+                                
                 </View>
             </View>
 

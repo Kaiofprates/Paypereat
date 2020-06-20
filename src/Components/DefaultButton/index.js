@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { useNavigation } from '@react-navigation/native';
 
 export default function DefaultButton(props) {
     const btnName = props.name;
@@ -18,12 +18,14 @@ export default function DefaultButton(props) {
     justifyContent:center;
 
 `;
-    const handleCheckout = () => {
-        alert('Teste');
+    const navigation = useNavigation();
+
+    const goToScreen = () => {
+        navigation.navigate(props.goToScreen);
     }
 
     return (
-        <ProductAddButton>
+        <ProductAddButton onPress={goToScreen}>
             <ProductText>{btnName}</ProductText>
         </ProductAddButton>
     );

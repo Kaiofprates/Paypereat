@@ -73,7 +73,13 @@ const IconProduct = styled.Image`
 `;
 
 export default function ProductDetail() {
+    
     const [selectedValue, setSelectedValue] = useState("0");
+
+    const goToScreen = () => {
+        
+    }
+
     return (
         <SafeAreaView >
             <ProductArea>
@@ -100,7 +106,7 @@ export default function ProductDetail() {
                     
                 </ProductItems>
 
-                <ProductAddButton>
+                <ProductAddButton onPress={goToScreen}>
                 <IconProduct source={shoppingCart}/>
                     <TextButtonProduct>ADICIONAR A SACOLA</TextButtonProduct>
                 </ProductAddButton>
