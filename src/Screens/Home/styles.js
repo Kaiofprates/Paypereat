@@ -48,6 +48,7 @@ export default StyleSheet.create({
     width:157,
     borderTopRightRadius:5,
     borderTopLeftRadius:5,
+    height:300
   },
   recomendationsText: {
       color:'#000',

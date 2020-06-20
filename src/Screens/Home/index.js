@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SafeAreaView, Text, TouchableOpacity, View, Image, TextInput } from 'react-native';
 import styles from './styles';
 import Icon from 'react-native-vector-icons/Feather';
@@ -8,7 +8,28 @@ import Card from '../../Components/Card';
 import Product from '../../Components/Product';
 import { Button } from 'react-native-paper';
 
+import Api from '../../server/index'
+
+
 export default function HomeScreen(props) {
+
+    const [data, setData] = useState([])
+
+    const api = new Api('https://back-ppe.herokuapp.com/')
+
+
+    async function showRoutes(){
+        const res  = await api.getProduct('/produtos')
+        setData(res.data.data)
+        }
+   showRoutes()
+
+    useEffect(()=>{
+    showRoutes()
+   console.log(data)         
+
+  
+    },[])
 
     const list = [
         {
@@ -44,8 +65,8 @@ export default function HomeScreen(props) {
                                 horizontal={true}
                                 showsHorizontalScrollIndicator={false}
                                 decelerationRate="fast">
-                                {
-                                    list.map((e) => <Card key={e.id} name={e.name} />)
+                                {  
+                                   data.map((e) => <Card key={e._id} img={e.img} name={e.name} />) 
                                 }
                             </ScrollView>
                         </View>
