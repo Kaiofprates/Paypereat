@@ -10,45 +10,49 @@ import Api from '../../server/index'
 export default function HomeScreen(props) {
   
     const [data, setData] = useState([])
+    const [search, setSearch] = useState()
 
     const api = new Api('https://back-ppe.herokuapp.com/')
 
+    /**
+     * busca por produtos
+     */
+    async function searchProduct(product){
+        const res = await api.searchProduct('/produtos/', product)
 
+        /**
+         * há uma certa demora na busca do produto, teremos que colocar alguma referencia visual de carregamento futuramente
+         */
+        if(res.data.data.length > 1){
+            console.log(res.data.data)
+            setData(res.data.data)
+        }else{
+            alert(`Desculpe, não temos esse produto no momento.`)
+        }
+        }   
+      
+     /**
+      * retorno de todos os produtos
+      */
     async function showRoutes(){
         const res  = await api.getProduct('/produtos')
         setData(res.data.data)
         }
-   showRoutes()
+   /**
+    * necessário para inicializar o array de produtos
+    */     
 
     useEffect(()=>{
     showRoutes()
-   console.log(data)         
-
-  
     },[])
 
-    const list = [
-        {
-            id: 1,
-            name: 'Alface'
-        },
-        {
-            id: 2,
-            name: 'Cebola'
-        },
-        {
-            id: 3,
-            name: 'cenoura'
-        }
-    ]
-
-
+    
     return (
         <SafeAreaView style={styles.container} >
 
             <View style={styles.content}>
                 <View style={styles.searchContainer}>
-                <TextInput style={styles.search} placeholder="Pesquisar" />
+                <TextInput style={styles.search} placeholder="Pesquisar"  onChangeText={setSearch} onBlur={ e => searchProduct(search)}/>
                 </View>
                
 
@@ -72,14 +76,9 @@ export default function HomeScreen(props) {
                            alignItems:'center'
                        }}>
                         <Text style={styles.productInitialText}>Produtos</Text>
-                       <Product/>
-                        <Product/>
-                        <Product/>
-                        <Product/>
-                        <Product/>
-                        <Product/>
-                        <Product/>
-                        <Product/>
+                        {
+                          data.map((e) => <Product preco={e.preco} name={e.name} key={e._id} img={e.img}/>) 
+                        }
                        </View>
                     </ScrollView>
                     

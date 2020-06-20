@@ -53,6 +53,37 @@ module.exports = class Api{
 
         return set
     }
+/**
+     * Pesquisa por produtos
+     * 
+    async function searchProduct(product){
+    const res = await api.searchProduct('/produtos/', product)
+    console.log(res.data) 
+    }   
+    searchProduct('banana')
+     */
 
+    async searchProduct(route, product){
+        const get = await this.api.get(route + product)
+        .then((e)=> { return e}).catch((err) => err)
+        return get
+
+     }
+     /**
+     * Pesquisa por produtos
+     * 
+    async function searchProduct(product){
+    const res = await api.searchProduct('/produtos/', product)
+    console.log(res.data) 
+    }   
+    searchProduct('banana')
+     */
+
+    async searchProduct(route, product){
+        const get = await this.api.get(route + product)
+        .then((e)=> { return e}).catch((err) => err)
+        return get
+
+     }
 
 }
