@@ -2,6 +2,8 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../Screens/Home';
 import ProductDetail from '../Screens/ProductDetail';
+import Product from '../Components/Product';
+
 const MainStack = createStackNavigator();
 
 export default () => {
@@ -14,8 +16,8 @@ export default () => {
                 headerLeft: null,
             })} />
 
-            <MainStack.Screen name="ProductDetail" component={ProductDetail}  options={({ navigation }) => ({
-              headerShown:false,
+            <MainStack.Screen name="ProductDetail" component={ProductDetail} options={({ navigation }) => ({
+                headerShown: false,
             })} />
         </MainStack.Navigator>
     );

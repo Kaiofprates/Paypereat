@@ -4,12 +4,17 @@ import alface from '../../assets/Products/alface.png';
 import styles from './styles';
 import star from '../../assets/star.png';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
-export default function Product({ navigation }) {
+export default function Product() {
+    const navigation = useNavigation();
+    const handleProductClick = () => {
+        navigation.navigate('ProductDetail');
+    }
 
 
     return (
-        <TouchableOpacity style={styles.boxProducts}>
+        <TouchableOpacity style={styles.boxProducts} onPress={handleProductClick}>
             <Image source={alface} style={styles.imageRecomendations} />
             <View style={styles.containerProduct}>
                 <View style={styles.contentIniProduct}>

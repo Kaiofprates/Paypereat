@@ -20,7 +20,11 @@ const UserImage = styled.Image`
     marginRight:20px;
 `;
 const ProfileResume = styled.View``;
-const ProfileName = styled.Text``;
+const ProfileName = styled.Text`
+    fontWeight:bold;
+    fontSize:17px;
+    marginBottom:5px;
+`;
 const ProfileEmail = styled.Text``;
 
 

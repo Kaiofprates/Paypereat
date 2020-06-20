@@ -23,11 +23,7 @@ const TotalValue = styled.Text`
     fontWeight:bold;
 `;
 
-export default function Cart(props) {
-
-    const goToCheckout = () => {
-        props.navigation.navigate('Checkout');
-}
+export default function Cart() {
 
     return (
         <SafeAreaView style={{
@@ -53,8 +49,7 @@ export default function Cart(props) {
                     <TextAmount>Valor Total:</TextAmount>
                     <TotalValue>R$ 50,00</TotalValue>
                 </TotalAmount>
-                <Button onPress={goToCheckout}>Ir para Checkout</Button>
-               {/*  <DefaultButton width="90%" height="50px" name="FINALIZAR COMPRA"/> */}
+              <DefaultButton width="90%" height="50px" name="FINALIZAR COMPRA" goToScreen="Checkout"/>
             </View>
             
         </SafeAreaView>
