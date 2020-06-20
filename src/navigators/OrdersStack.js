@@ -20,9 +20,9 @@ export default () => {
                 )
             })} />
             <OrdersStack.Screen name="OrderDetail" component={OrderDetail} options={({ navigation }) => ({
-                title: 'Order Detail',
+                title: 'Detalhes do pedido',
                 headerTitleAlign: 'center',
-                headerLeft: null,
+                //headerLeft: null,
             })} />
         </OrdersStack.Navigator>
     );

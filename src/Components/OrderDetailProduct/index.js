@@ -1,86 +1,78 @@
 import React from 'react';
+import { Text, Image, View } from 'react-native';
 import styled from 'styled-components';
+import couveFlor from '../../assets/Products/couveflor.png';
 
-const OrderContainer = styled.View`
+const ProductCard = styled.View`
+    flexDirection:row;
+    marginBottom:25px;
     width:90%;
-    height:150px;
-    marginTop:20px;
+    borderRadius:6px;
+    height:100px;
     alignSelf:center;
-    flexDirection:column;
-    justifyContent:space-around;
-    backgroundColor:#fff;
-    padding:10px;
-    borderRadius:5px;
 `;
 
-const OrderInfo = styled.View`
+const ProductImage = styled.Image`
+    borderRadius:5px;
+    width:30%;
+    height:100%;
+`;
+const ProductLeftContent = styled.View`
+    width:70%;
+    height:100%;
+    alignItems:center;
+    justifyContent:space-between;
+    paddingBottom:12px;
+   
+    `;
+const TopContentProduct = styled.View`
+    width:98%;
+    padding:10px;
     flexDirection:row;
     justifyContent:space-between;
 `;
-const OrderNumber = styled.Text`
-    fontSize:16px;
-    fontWeight:bold;
+const ProducTitle = styled.Text`
+    fontSize:17px;
+    color:#555555;
 `;
-const OrderTimesTamp = styled.Text`
-    fontSize:15px;
-    color:#9B9B9B;
-`;
-const OrderAddress = styled.Text`
-    color:#9B9B9B;
-`;
-const OrderAmount = styled.Text``;
-const OrderValue = styled.Text`
-    fontSize:16px;
-`; 
-
-const DetailButton = styled.TouchableOpacity`
-    width:110px;
-    padding:5px;
-    alignItems:center;
-    justifyContent:center;
-    borderWidth:1px;
-    borderRadius:10px;
-`;
-const  TextDetail = styled.Text`
-    fontSize:15px;
-`;
-const StatusOrder = styled.Text`
-    fontSize:15px;
-    color:#2AA952;
+const BottomContent = styled.View`
+    width:90%;
+    flexDirection:row;
+    justifyContent:space-between;
 `;
 
-export default function OrderDetailProduct() {
+const Price = styled.Text`
+    fontSize:17px;
+    color:#CECECE;
+`;
+
+
+export default function ProductCart() {
+
+    const handleProductPoints = () => {
+        alert('Botão pressionado');
+    }
+
     return (
-        <OrderContainer style={{
+        <ProductCard style={{
+            backgroundColor: "white",
             elevation: 8,
-            shadowColor: 'red',
+            shadowColor: '#000',
             shadowOffset: { width: 0, height: 3 },
             shadowOpacity: 0.5,
             shadowRadius: 5,
         }}>
-            <OrderInfo>
-                <OrderNumber>Ordem №1947034</OrderNumber>
-                <OrderTimesTamp>16-06-2020 16:20</OrderTimesTamp>
-            </OrderInfo>
-            <OrderInfo>
-                <OrderAddress>Endereço:</OrderAddress>
-                <OrderAddress>Rua sei la o que, n° 25, Caratinga, MG</OrderAddress>
-            </OrderInfo>
+            <ProductImage source={couveFlor} />
+            <ProductLeftContent>
+                <TopContentProduct>
+                    <ProducTitle>Couve-Flor</ProducTitle>
+                </TopContentProduct>
 
-            <OrderInfo>
-                <OrderAmount>Quantidade:3</OrderAmount>
-                <OrderValue>Valor total: R$ 26,00</OrderValue>
-            </OrderInfo>
+                <BottomContent>
+                    <Price>R$ 12,00</Price>
+                </BottomContent>
 
-            <OrderInfo>
-                <DetailButton>
-                    <TextDetail>Detalhes</TextDetail>
-                </DetailButton>
-
-                <StatusOrder>Enviado</StatusOrder>
-
-            </OrderInfo>
-
-        </OrderContainer>
+            </ProductLeftContent>
+        </ProductCard>
     );
-}
+} 

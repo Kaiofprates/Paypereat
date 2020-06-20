@@ -7,6 +7,7 @@ import OrdersStack from './OrdersStack';
 import Profile from '../Screens/Profile';
 import { Image, Text } from 'react-native';
 import MainStack from './MainStack';
+import ProfileStack from './ProfileStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -49,7 +50,7 @@ export default () => {
                 )
             }} />
 
-            <Tab.Screen name="Profile" component={Profile} options={{
+            <Tab.Screen name="Profile" component={ProfileStack} options={{
                 tabBarIcon: ({ color, size }) => (
                     <Image source={require('../assets/Icons/TabProfile/profile.png')} style={{
                         width: 25,
