@@ -13,11 +13,6 @@ export default () => {
             <OrdersStack.Screen name="Pedidos" component={Orders} options={({ navigation }) => ({
                 title: 'Pedidos',
                 headerTitleAlign: 'center',
-                headerRight: () => (
-                     <Button title="Order Detail" onPress={() => {
-                        navigation.navigate('OrderDetail');
-                     }}/>
-                )
             })} />
             <OrdersStack.Screen name="OrderDetail" component={OrderDetail} options={({ navigation }) => ({
                 title: 'Detalhes do pedido',
