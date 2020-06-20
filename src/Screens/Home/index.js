@@ -45,8 +45,12 @@ export default function HomeScreen(props) {
 
     return (
         <SafeAreaView style={styles.container} >
+
             <View style={styles.content}>
+                <View style={styles.searchContainer}>
                 <TextInput style={styles.search} placeholder="Pesquisar" />
+                </View>
+               
 
                 <View style={styles.scrollProducts}>
                     <ScrollView horizontal={false}>
@@ -62,9 +66,24 @@ export default function HomeScreen(props) {
                                 }
                             </ScrollView>
                         </View>
+                        
+                       <View style={{
+                           width:'100%',
+                           alignItems:'center'
+                       }}>
+                        <Text style={styles.productInitialText}>Produtos</Text>
+                       <Product/>
+                        <Product/>
+                        <Product/>
+                        <Product/>
+                        <Product/>
+                        <Product/>
+                        <Product/>
+                        <Product/>
+                       </View>
                     </ScrollView>
-                    <Text style={styles.productInitialText}>Produtos</Text>
-                    <Product/>
+                    
+                    
                                 
                 </View>
             </View>

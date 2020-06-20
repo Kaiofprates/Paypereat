@@ -5,6 +5,7 @@ const windowHeight = Dimensions.get('window').height;
 
 export default StyleSheet.create({
     container: {
+    width:'100%',
     marginTop:20,
     flex: 1,
     alignItems: 'center',
@@ -14,8 +15,12 @@ export default StyleSheet.create({
       alignItems:'center',
   },
 
+  searchContainer:{
+    flexDirection:'row',
+    width:'100%',
+  },
   search: {
-      width:windowWidth-50,
+      width:'90%',
       height:50,
       borderRadius:50,
       borderColor:'#8E8E93',
@@ -24,7 +29,7 @@ export default StyleSheet.create({
       marginBottom:20,
   },
   scroll: {
-      width:windowWidth,
+      width:'100%',
   },
   sugestionText: {
      padding:20,
@@ -32,33 +37,8 @@ export default StyleSheet.create({
     textAlign:'left',
     paddingLeft:20
   },    
-  boxRecomendations: {
-    alignItems:'center',
-    justifyContent:'space-between',    
-    width: 157,
-    height: 147,
-    marginLeft:20,
-    marginRight:20,
-    borderWidth:1,
-    borderColor:'#EEEEEE',
-    borderRadius:5,
-
-  },
-  imageRecomendations: {
-    width:157,
-    borderTopRightRadius:5,
-    borderTopLeftRadius:5,
-    height:300
-  },
-  recomendationsText: {
-      color:'#000',
-      fontSize:14,
-      marginBottom:12,
-  },
-
   scrollProducts:{
-      width:windowWidth,
-      alignItems:'center'    
+      width:'100%',
   },
   productInitialText: {
     width:windowWidth,
