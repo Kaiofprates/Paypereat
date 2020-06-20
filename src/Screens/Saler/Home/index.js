@@ -40,9 +40,9 @@ export default function HomeScreen() {
                 marginBottom:20,
             }}>Ações</TextLastOrders>
             <BoxActions>
-                <ActionBox/>
-                <ActionBox/>
-                <ActionBox/>
+                <ActionBox title="Cadastrar Produto" screenNavigator="AddProduct"/>
+                <ActionBox title="Meus Produtos" screenNavigator="AddProduct"/>
+                <ActionBox title="Vendas" screenNavigator="AddProduct"/>
             </BoxActions>
         </BoxDashoard>
 

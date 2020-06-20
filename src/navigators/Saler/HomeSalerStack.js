@@ -1,9 +1,9 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../../Screens/Saler/Home';
-/* import ProductDetail from '../Screens/ProductDetail';
-import Product from '../Components/Product';
- */
+import AddProduct from '../../Screens/Saler/AddProduct';
+//import Product from '../Components/Product';
+
 const MainStack = createStackNavigator();
 
 export default () => {
@@ -16,9 +16,10 @@ export default () => {
                 headerLeft: null,
             })} />
 
-      {/*       <MainStack.Screen name="ProductDetail" component={ProductDetail} options={({ navigation }) => ({
-                headerShown: false,
-            })} /> */}
+           <MainStack.Screen name="AddProduct" component={AddProduct} options={({ navigation }) => ({
+                    title: 'Cadastrar Produto',
+                    headerTitleAlign: 'center',
+            })} /> 
         </MainStack.Navigator>
     );
 }

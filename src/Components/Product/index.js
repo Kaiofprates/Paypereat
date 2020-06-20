@@ -27,7 +27,7 @@ export default function Product() {
                         <Image style={styles.productStars} source={star} />
                     </View>
                 </View>
-                <Text style={styles.productDescription}>O seu filho da puta tá olhando o quê aqui, vai capinar um lote</Text>
+                <Text style={styles.productDescription}>Alface, alface é muito bom pois a alface é gostoso, muito nutritivo</Text>
                 <Text style={styles.productPrice}>R$ 2,50</Text>
             </View>
 
