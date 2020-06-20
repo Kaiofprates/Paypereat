@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useReducer, useEffect } from 'react';
 import { SafeAreaView, Picker } from 'react-native';
 import styled from 'styled-components';
 import alfaceLg from '../../assets/Products/alfacelg.png';
 import shoppingCart from '../../assets/Icons/Cart/shopping-cart.png';
 import { useRoute } from '@react-navigation/native';
+import { AsyncStorage } from 'react-native';
 
 
 const ProductArea = styled.View`
@@ -13,11 +14,11 @@ const ProductArea = styled.View`
 `;
 const ProductImage = styled.Image`
   width:100%;
-  height:300px;
+  height:250px;
 `;
 const ProductTitle = styled.View`
     width:100%;
-    height:150px;
+    height:50px;
     alignItems:center;
     justifyContent:center;
 `;
@@ -30,7 +31,7 @@ const ProductTitleText = styled.Text`
 const ProductDescription = styled.Text`
     fontSize:17px;
     textAlign:center;
-    marginTop:10px;
+    marginTop:0px;
 `;
 const ProductItems = styled.View`
     width:100%;
@@ -54,7 +55,7 @@ const ProductSelect =styled.View`
 `;
 const ProductAddButton = styled.TouchableOpacity`
     width:70%;
-    marginTop:70px;
+    marginTop:40px;
     height:55px;
     flexDirection:row;
     borderRadius:10px;
@@ -73,15 +74,52 @@ const IconProduct = styled.Image`
     marginRight:15px
 `;
 
+
 export default function ProductDetail() {
-    
-    const [selectedValue, setSelectedValue] = useState("0");
-    
+
     const route  = useRoute(); 
+    const [selectedValue, setSelectedValue] = useState("0");
+   
+    const data = async () => {
+    let data; 
+    try {
+         data = await AsyncStorage.getItem('DATA') || [];
+        } catch (error) {
+        console.log(error.message);
+    }return data;
+}
+   
+async function showItens(){
+        const res  = await data()
+        console.log(res)
+        return res
+    }
+
+    const product  = route.params.id 
+
+
+useEffect(()=>{
+showItens()
+}, [])
+
 
     const goToScreen = () => {
-        
+
+    const saveData = async e => {
+            try {
+            await AsyncStorage.setItem('DATA', e.toString());
+            } catch (error) {
+            console.log(error.message);
+         }
+            };
+
+    const returnItens =  async () =>{
+        const res  = await data()
+        saveData(product + ',' + res)
     }
+    returnItens()
+    }
+
 
     return (
         <SafeAreaView >
