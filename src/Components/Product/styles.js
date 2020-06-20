@@ -7,6 +7,7 @@ export default StyleSheet.create({
 
     imageRecomendations: {
         height: 102,
+        width: 120
     },
     boxProducts: {
         width: '90%',
