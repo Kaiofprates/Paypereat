@@ -65,9 +65,9 @@ export default function ProductDetail() {
                     <DeliveredOrder>Enviado</DeliveredOrder>
                 </OrderHeader>
                 <OrderScroll>
-                    <OrderDetailProduct  productUri="https://static.tuasaude.com/media/article/bb/ad/couve_14746_l.jpg" productName="Repolho"/>
-                    <OrderDetailProduct  productUri="https://www.ibahia.com/fileadmin/user_upload/ibahia/2019/outubro/25/banana.jpg?width=1200&enable=upscale" productName="Banana"/>
-                    <OrderDetailProduct  productUri="https://www.soflor.com.br/wp-content/uploads/2014/06/cebola-roxa-50-sementes-1951-e1496865117315.jpg" productName="Cebola Roxa"/>
+                    <OrderDetailProduct value="2.3"  productUri="https://static.tuasaude.com/media/article/bb/ad/couve_14746_l.jpg" productName="Repolho"/>
+                    <OrderDetailProduct  value="1.3" productUri="https://www.ibahia.com/fileadmin/user_upload/ibahia/2019/outubro/25/banana.jpg?width=1200&enable=upscale" productName="Banana"/>
+                    <OrderDetailProduct  value="5.45"  productUri="https://www.soflor.com.br/wp-content/uploads/2014/06/cebola-roxa-50-sementes-1951-e1496865117315.jpg" productName="Cebola Roxa"/>
                 </OrderScroll>
 
                 <OrderInformationsBox>
@@ -80,7 +80,7 @@ export default function ProductDetail() {
                     }}>Informação da Compra</Text>
                     <BoxOrderInfo>        
                             <TextBox>Endereço de Entrega:</TextBox>
-                            <TextBold>Rua não sei onde, N° 404</TextBold>
+                            <TextBold>Tv. Santos Mestre, N° 25</TextBold>
                     </BoxOrderInfo>
 
                     <BoxOrderInfo>        
@@ -95,7 +95,7 @@ export default function ProductDetail() {
 
                     <BoxOrderInfo>        
                             <TextBox>Total:</TextBox>
-                            <TextBold>R$ 5,00</TextBold>
+                            <TextBold>R$ 11,05</TextBold>
                     </BoxOrderInfo>
                 </OrderInformationsBox>
             </OrderBox>

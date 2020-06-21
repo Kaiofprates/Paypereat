@@ -70,7 +70,7 @@ export default function ProductCart(props) {
                 </TopContentProduct>
 
                 <BottomContent>
-                    <Price>R$ 12,00</Price>
+                    <Price>R$ {props.value}</Price>
                 </BottomContent>
 
             </ProductLeftContent>

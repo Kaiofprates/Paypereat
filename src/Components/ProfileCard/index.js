@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import mia from '../../assets/user.png';
+import profileImage from '../../assets/user.png';
 
 
 const ProfileCard = styled.View`
@@ -31,7 +31,7 @@ export default function Profile() {
 
     return (
        <ProfileCard>
-        <UserImage source={mia}/>
+        <UserImage source={profileImage}/>
         <ProfileResume>
             <ProfileName>Kelviny Henrique</ProfileName>
             <ProfileEmail>kelvinyhenrique17@gmail.com</ProfileEmail>
