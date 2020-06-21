@@ -50,7 +50,7 @@ const StatusOrder = styled.Text`
     color:#2AA952;
 `;
 
-export default function Order() {
+export default function Order(props) {
 
     const navigation = useNavigation();
 
@@ -68,16 +68,16 @@ export default function Order() {
             shadowRadius: 5,
         }}>
             <OrderInfo>
-                <OrderNumber>Ordem №1947034</OrderNumber>
-                <OrderTimesTamp>16-06-2020 16:20</OrderTimesTamp>
+                <OrderNumber>Ordem №{props.orderNumber}</OrderNumber>
+                <OrderTimesTamp>{props.orderDate}</OrderTimesTamp>
             </OrderInfo>
             <OrderInfo>
                 <OrderAddress>Endereço:</OrderAddress>
-                <OrderAddress>Rua sei la o que, n° 25, Caratinga, MG</OrderAddress>
+                <OrderAddress>Tv. Santos Mestre, n° 26, Caratinga, MG</OrderAddress>
             </OrderInfo>
 
             <OrderInfo>
-                <OrderAmount>Quantidade:3</OrderAmount>
+    <OrderAmount>Quantidade: {props.ammount}</OrderAmount>
                 <OrderValue>Valor total: R$ 26,00</OrderValue>
             </OrderInfo>
 

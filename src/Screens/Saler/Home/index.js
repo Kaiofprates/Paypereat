@@ -4,6 +4,7 @@ import Orders from '../../../Components/SalerComponents/Orders';
 import styled from 'styled-components';
 import ActionBox from '../../../Components/SalerComponents/ActionBox';
 
+
 const BoxDashoard = styled.View`
     width:100%;
     flexDirection:column;
@@ -40,9 +41,9 @@ export default function HomeScreen() {
                 marginBottom:20,
             }}>Ações</TextLastOrders>
             <BoxActions>
-                <ActionBox title="Cadastrar Produto" screenNavigator="AddProduct"/>
-                <ActionBox title="Meus Produtos" screenNavigator="Product"/>
-                <ActionBox title="Pedidos" screenNavigator="Pedidos"/>
+                <ActionBox title="Cadastrar Produto" screenNavigator="AddProduct" icon="https://live.staticflickr.com/65535/50030574862_aa436aea43.jpg"/>
+                <ActionBox title="Meus Produtos" screenNavigator="Product" icon="https://live.staticflickr.com/65535/50030314356_8434f55434.jpg"/>
+                <ActionBox title="Pedidos" screenNavigator="Pedidos" icon="https://live.staticflickr.com/65535/50029776758_9d85e6e9bd.jpg"/>
             </BoxActions>
         </BoxDashoard>
 

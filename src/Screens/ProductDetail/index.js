@@ -3,7 +3,7 @@ import { SafeAreaView, Picker } from 'react-native';
 import styled from 'styled-components';
 import alfaceLg from '../../assets/Products/alfacelg.png';
 import shoppingCart from '../../assets/Icons/Cart/shopping-cart.png';
-import { useRoute } from '@react-navigation/native';
+import { useRoute, useNavigation } from '@react-navigation/native';
 import { AsyncStorage } from 'react-native';
 
 
@@ -18,13 +18,15 @@ const ProductImage = styled.Image`
 `;
 const ProductTitle = styled.View`
     width:100%;
-    height:50px;
+    height:150px;
+    marginBottom:10px;
     alignItems:center;
     justifyContent:center;
 `;
 const ProductTitleText = styled.Text`
     color:#000;
     fontSize:24px;
+    marginBottom:20px;
     fontWeight:bold;
     `;
 
@@ -43,7 +45,7 @@ const ProductItems = styled.View`
 const ProductPrice = styled.Text`
     fontSize:20px;
 `;
-const ProductSelect =styled.View`
+const ProductSelect = styled.View`
     borderWidth:1px;
     borderColor:#828282;
     width:37%;
@@ -76,79 +78,80 @@ const IconProduct = styled.Image`
 
 
 export default function ProductDetail() {
+    const navigation = useNavigation();
+    const route = useRoute();
+    const [selectedValue, setSelectedValue] = useState("1");
 
-    const route  = useRoute(); 
-    const [selectedValue, setSelectedValue] = useState("0");
-   
     const data = async () => {
-    let data; 
-    try {
-         data = await AsyncStorage.getItem('DATA') || [];
+        let data;
+        try {
+            data = await AsyncStorage.getItem('DATA') || [];
         } catch (error) {
-        console.log(error.message);
-    }return data;
-}
-   
-async function showItens(){
-        const res  = await data()
+            console.log(error.message);
+        } return data;
+    }
+
+    async function showItens() {
+        const res = await data()
         console.log(res)
         return res
     }
 
-    const product  = route.params.id 
+    const product = route.params.id
 
 
-useEffect(()=>{
-showItens()
-}, [])
+    useEffect(() => {
+        showItens()
+    }, [])
 
 
     const goToScreen = () => {
 
-    const saveData = async e => {
+        const saveData = async e => {
             try {
-            await AsyncStorage.setItem('DATA', e.toString());
+                await AsyncStorage.setItem('DATA', e.toString());
             } catch (error) {
-            console.log(error.message);
-         }
-            };
+                console.log(error.message);
+            }
+        };
 
-    const returnItens =  async () =>{
-        const res  = await data()
-        saveData(product + ',' + res)
-    }
-    returnItens()
+        const returnItens = async () => {
+            const res = await data()
+            saveData(product + ',' + res)
+        }
+        returnItens();
+        navigation.navigate('CheckoutStack');
     }
 
 
     return (
         <SafeAreaView >
             <ProductArea>
-                <ProductImage source={{uri: route.params.img}} />
+                <ProductImage source={{ uri: route.params.img }} />
                 <ProductTitle>
                     <ProductTitleText>{route.params.name}</ProductTitleText>
-                    <ProductDescription>{route.params.details}</ProductDescription>
+                    <ProductDescription>{route.params.details}Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</ProductDescription>
                 </ProductTitle>
 
                 <ProductItems>
-                    <ProductPrice> { `R$ ${route.params.price} / UN` }</ProductPrice>
+                    <ProductPrice> {`R$ ${route.params.price} / UN`}</ProductPrice>
                     <ProductSelect>
                         <Picker
-                        selectedValue={selectedValue}
-                        style={{ height: 46, width: 150}}
-                        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
-                    >
-                        <Picker.Item label="Quantidade" value="0" />
-                        <Picker.Item label="1" value="1" />
-                        <Picker.Item label="2" value="2" />
-                        <Picker.Item label="3" value="3" />
-                    </Picker>
+                            selectedValue={selectedValue}
+                            style={{ height: 46, width: 150 }}
+                            onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+                        >
+                            <Picker.Item label="Quantidade" value="0" />
+                            <Picker.Item label="1" value="1" />
+                            <Picker.Item label="2" value="2" />
+                            <Picker.Item label="3" value="3" />
+                        </Picker>
                     </ProductSelect>
-                    
+
                 </ProductItems>
 
                 <ProductAddButton onPress={goToScreen}>
-                <IconProduct source={shoppingCart}/>
+                    <IconProduct source={shoppingCart} />
                     <TextButtonProduct>ADICIONAR A SACOLA</TextButtonProduct>
                 </ProductAddButton>
             </ProductArea>

@@ -48,12 +48,12 @@ export default function Orders(props) {
             <OrdersContainer horizontal={false} style={{
                 width:'100%',
             }}>
-                <Order/>
-                <Order/>
-                <Order/>
-                <Order/>
-                <Order/>
-                <Order/>
+                <Order orderNumber="1947034" orderDate="21-06-2020 14:41" ammount="2"/>
+                <Order orderNumber="1947033" orderDate="21-06-2020 13:50" ammount="3"/>
+                <Order orderNumber="1947032" orderDate="21-06-2020 12:21" ammount="4"/>
+                <Order orderNumber="1947031" orderDate="21-06-2020 11:23" ammount="1"/>
+                <Order orderNumber="1947030" orderDate="21-06-2020 10:40" ammount="2"/>
+                <Order orderNumber="1947029" orderDate="21-06-2020 09:23" ammount="1"/>
             </OrdersContainer>
         </SafeAreaView>
     )

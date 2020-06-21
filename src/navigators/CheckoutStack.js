@@ -11,7 +11,7 @@ export default () => {
         <CheckoutStack.Navigator>
 
             <CheckoutStack.Screen name="Cart" component={Cart} options={({ navigation }) => ({
-                title: 'Sacola',
+                title: 'Carrinho',
                 headerTitleAlign: 'center',
                 headerLeft: null,
             })} />

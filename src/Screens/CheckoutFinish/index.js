@@ -41,7 +41,7 @@ export default function CheckoutFinsh() {
                     <ParagraphFinish>Seu pedido será entregue em breve. Obrigado por escolher o nosso app!</ParagraphFinish>
                 </TextBox>
 
-                <DefaultButton width="90%" height="50px" name="Continuar Comprando"></DefaultButton>
+                <DefaultButton width="90%" height="50px" name="Continuar Comprando" goToScreen="Home"></DefaultButton>
             </ContentFinishArea>
         </SafeAreaView>
     );
