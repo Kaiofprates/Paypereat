@@ -6,19 +6,26 @@ import star from '../../assets/star.png';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
-export default function Product() {
+export default function Product(props) {
     const navigation = useNavigation();
+    const details = {
+        img: props.img,
+        name: props.name,
+        price: props.preco,
+        details: props.user
+    }
     const handleProductClick = () => {
-        navigation.navigate('ProductDetail');
+        navigation.navigate('ProductDetail',details);
     }
 
 
     return (
         <TouchableOpacity style={styles.boxProducts} onPress={handleProductClick}>
-            <Image source={alface} style={styles.imageRecomendations} />
+
+            <Image source={{ uri: props.img}} style={styles.imageRecomendations} />
             <View style={styles.containerProduct}>
                 <View style={styles.contentIniProduct}>
-                    <Text style={styles.productText}>Alfaçe Verde</Text>
+                 <Text style={styles.productText}>{props.name}</Text>
                     <View style={styles.starProduct}>
                         <Image style={styles.productStars} source={star} />
                         <Image style={styles.productStars} source={star} />
@@ -27,8 +34,8 @@ export default function Product() {
                         <Image style={styles.productStars} source={star} />
                     </View>
                 </View>
-                <Text style={styles.productDescription}>Alface, alface é muito bom pois a alface é gostoso, muito nutritivo</Text>
-                <Text style={styles.productPrice}>R$ 2,50</Text>
+    <Text style={styles.productDescription}>{props.user}</Text>
+    <Text style={styles.productPrice}>{` R$ ${props.preco}`}</Text>
             </View>
 
         </TouchableOpacity>

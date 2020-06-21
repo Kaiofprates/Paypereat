@@ -3,6 +3,7 @@ import { SafeAreaView, Picker } from 'react-native';
 import styled from 'styled-components';
 import alfaceLg from '../../assets/Products/alfacelg.png';
 import shoppingCart from '../../assets/Icons/Cart/shopping-cart.png';
+import { useRoute } from '@react-navigation/native';
 
 
 const ProductArea = styled.View`
@@ -75,6 +76,8 @@ const IconProduct = styled.Image`
 export default function ProductDetail() {
     
     const [selectedValue, setSelectedValue] = useState("0");
+    
+    const route  = useRoute(); 
 
     const goToScreen = () => {
         
@@ -83,14 +86,14 @@ export default function ProductDetail() {
     return (
         <SafeAreaView >
             <ProductArea>
-                <ProductImage source={alfaceLg} />
+                <ProductImage source={{uri: route.params.img}} />
                 <ProductTitle>
-                    <ProductTitleText>Alfaçe</ProductTitleText>
-                    <ProductDescription>Lorem Ipsum is simply dummy text of the printing and typesetting industry</ProductDescription>
+                    <ProductTitleText>{route.params.name}</ProductTitleText>
+                    <ProductDescription>{route.params.details}</ProductDescription>
                 </ProductTitle>
 
                 <ProductItems>
-                    <ProductPrice>R$ 5,00 / Un</ProductPrice>
+                    <ProductPrice> { `R$ ${route.params.price} / UN` }</ProductPrice>
                     <ProductSelect>
                         <Picker
                         selectedValue={selectedValue}
