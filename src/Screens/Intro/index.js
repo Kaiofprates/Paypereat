@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 
 import styles from './styles';
-import { TextInput } from 'react-native-paper';
 import image from '../../assets/estore.png';
 
 export default function Login({ navigation }) {
@@ -21,14 +20,18 @@ export default function Login({ navigation }) {
 
       <View>
         <TouchableOpacity style={styles.compra} onPress={() => {
-          navigation.navigate('Home')
+          navigation.navigate('Client')
         }}>
           <Text style={styles.text}>
             Quero Comprar
      </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.venda}>
+        <TouchableOpacity style={styles.venda}
+        onPress={()=>{
+          navigation.navigate('Saler')
+        }}
+        >
           <Text style={styles.text}>
             Quero Vender
      </Text>
