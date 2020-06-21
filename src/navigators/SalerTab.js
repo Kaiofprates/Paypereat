@@ -7,7 +7,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 //import Profile from '../Screens/Profile';
 import { Image, Text } from 'react-native';
 import HomeSalerStack from './Saler/HomeSalerStack';
-//import ProfileStack from './ProfileStack';
+import OrdersStack from './Saler/OrdersStack';
+import ProfileStack from './ProfileStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -25,25 +26,18 @@ export default () => {
                 )
             }} />
 
-{/*             <Tab.Screen name="Donation" component={Donation} options={{
-                tabBarIcon: ({ color, size }) => (
-                    <Image source={require('../assets/Icons/TabDonation/donation.png')} style={{
-                        width: 25,
-                        height: 25
-                    }} />
-                )
-            }} />
-            <Tab.Screen name="Sacola" component={CheckoutStack} options={{
-                tabBarIcon: ({ color, size }) => (
-                    <Image source={require('../assets/Icons/TabCart/cart.png')} style={{
-                        width: 25,
-                        height: 25
-                    }} />
-                )
-            }} />
             <Tab.Screen name="Pedidos" component={OrdersStack} options={{
                 tabBarIcon: ({ color, size }) => (
                     <Image source={require('../assets/Icons/TabOrder/order.png')} style={{
+                        width: 25,
+                        height: 25
+                    }} />
+                )
+            }} />
+
+<Tab.Screen name="Vendas" component={OrdersStack} options={{
+                tabBarIcon: ({ color, size }) => (
+                    <Image source={require('../assets/Icons/TabProfile/profile.png')} style={{
                         width: 25,
                         height: 25
                     }} />
@@ -57,7 +51,7 @@ export default () => {
                         height: 25
                     }} />
                 )
-            }} /> */}
+            }} />
         </Tab.Navigator>
     );
 }

@@ -2,10 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { useNavigation } from '@react-navigation/native';
 import { Dimensions } from 'react-native';
+import { useState } from 'react';
+import { useEffect } from 'react';
 const windowWidth = Dimensions.get('window').width;
 
 const OrderContainer = styled.View`
-    width:${Math.round(windowWidth-50)}px;
+    width:${Math.round(windowWidth - 50)}px;
     height:140px;
     margin:20px;
     alignSelf:center;
@@ -49,12 +51,49 @@ const TextDetail = styled.Text`
 `;
 const StatusOrder = styled.Text`
     fontSize:15px;
-    color:#2AA952;
 `;
 
-export default function Order() {
+const TimePerdido = styled.Text`
+    fontSize:13px;
+    color:#E61F35;
+
+`;
+
+const TimeLeft = styled.Text`
+    fontSize:13px;
+    color:#000;
+
+`;
+
+
+export default function Order(props) {
 
     const navigation = useNavigation();
+
+    const [textColor, setTextColor] = useState('#000');
+
+    useEffect(()=>{
+        propsColorsStatus();
+    },[propsColorsStatus])
+
+    function propsColorsStatus() {
+        switch (props.StatusOrder) {
+            case 'Enviado':
+                setTextColor('#2AA952');
+                break;
+            case 'Pendente':
+                setTextColor('#FFBA49');
+                break;
+            case 'Cancelado':
+                setTextColor('#EB5757');
+                break;
+            case 'Tempo Excedido':
+                setTextColor('#EB5758');
+                break;
+            default:
+                break;
+        }
+    }
 
     const handleDetailOrder = () => {
         navigation.navigate('OrderDetail');
@@ -70,7 +109,7 @@ export default function Order() {
             shadowRadius: 5,
         }}>
             <OrderInfo>
-                <OrderNumber>Ordem №1947034</OrderNumber>
+                <OrderNumber>Pedido №1947034</OrderNumber>
                 <OrderTimesTamp>16-06-2020 16:20</OrderTimesTamp>
             </OrderInfo>
 
@@ -80,11 +119,17 @@ export default function Order() {
             </OrderInfo>
 
             <OrderInfo>
+                {textColor == '#EB5758' ? <TimePerdido>Você não respondeu ao pedido</TimePerdido> :  <TimeLeft>Tempo restante 12min</TimeLeft>}
+            </OrderInfo>
+
+            <OrderInfo>
                 <DetailButton onPress={handleDetailOrder}>
                     <TextDetail>Detalhes</TextDetail>
                 </DetailButton>
 
-                <StatusOrder>Enviado</StatusOrder>
+                <StatusOrder style={{
+                    color:textColor,
+                }}>{props.StatusOrder}</StatusOrder>
             </OrderInfo>
 
         </OrderContainer>

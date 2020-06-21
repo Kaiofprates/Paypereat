@@ -41,8 +41,8 @@ export default function HomeScreen() {
             }}>Ações</TextLastOrders>
             <BoxActions>
                 <ActionBox title="Cadastrar Produto" screenNavigator="AddProduct"/>
-                <ActionBox title="Meus Produtos" screenNavigator="AddProduct"/>
-                <ActionBox title="Vendas" screenNavigator="AddProduct"/>
+                <ActionBox title="Meus Produtos" screenNavigator="Product"/>
+                <ActionBox title="Pedidos" screenNavigator="Pedidos"/>
             </BoxActions>
         </BoxDashoard>
 
