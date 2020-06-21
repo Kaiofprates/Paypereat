@@ -12,7 +12,8 @@ export default function Product(props) {
         img: props.img,
         name: props.name,
         price: props.preco,
-        details: props.user
+        details: props.user,
+        id: props.id
     }
     const handleProductClick = () => {
         navigation.navigate('ProductDetail',details);

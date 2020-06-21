@@ -77,7 +77,7 @@ export default function HomeScreen(props) {
                        }}>
                         <Text style={styles.productInitialText}>Produtos</Text>
                         {
-                          data.map((e) => <Product preco={e.preco} name={e.name} key={e._id} img={e.img}/>) 
+                          data.map((e) => <Product preco={e.preco} name={e.name} key={e._id} img={e.img}  id={e._id}/>) 
                         }
                        </View>
                     </ScrollView>

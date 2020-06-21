@@ -113,10 +113,10 @@ const [amount, setAmount ] = useState(props.amount)
             shadowOpacity: 0.5,
             shadowRadius: 5,
         }}>
-            <ProductImage source={couveFlor} />
+            <ProductImage source={{ uri: props.img }} />
             <ProductLeftContent>
                 <TopContentProduct>
-                    <ProducTitle>Couve-Flor</ProducTitle>
+            <ProducTitle>{props.name}</ProducTitle>
                     <PointButtons onPress={handleProductPoints}>
                         <Circle />
                         <Circle />
@@ -151,7 +151,7 @@ const [amount, setAmount ] = useState(props.amount)
                         ><SubtractImage source={subtractImage} /></SubtractButton>
                     </SelecAmount>
 
-                    <Price>R$ 12,00</Price>
+                    <Price>{ `R$ ${props.price} ` }</Price>
                 </BottomContent>
 
             </ProductLeftContent>
