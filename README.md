@@ -24,4 +24,4 @@ https://back-ppe.herokuapp.com/api/
 
 # MVP 
 
-< img src="./assets/intro.gif" />
+<img src="./assets/intro.gif" />
