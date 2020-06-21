@@ -3,6 +3,7 @@ import { Text, Image, View } from 'react-native';
 import styled from 'styled-components';
 import couveFlor from '../../assets/Products/couveflor.png';
 
+
 const ProductCard = styled.View`
     flexDirection:row;
     marginBottom:25px;
@@ -47,7 +48,7 @@ const Price = styled.Text`
 `;
 
 
-export default function ProductCart() {
+export default function ProductCart(props) {
 
     const handleProductPoints = () => {
         alert('Botão pressionado');
@@ -62,10 +63,10 @@ export default function ProductCart() {
             shadowOpacity: 0.5,
             shadowRadius: 5,
         }}>
-            <ProductImage source={couveFlor} />
+            <ProductImage source={{uri: props.productUri}} />
             <ProductLeftContent>
                 <TopContentProduct>
-                    <ProducTitle>Couve-Flor</ProducTitle>
+                    <ProducTitle>{props.productName}</ProducTitle>
                 </TopContentProduct>
 
                 <BottomContent>

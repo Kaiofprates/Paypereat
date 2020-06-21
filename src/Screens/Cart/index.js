@@ -75,7 +75,7 @@ useEffect(()=>{
                 height: '81%',
             }}>
                 {
-                    data.map((e)=> <ProductCart amount="0"  img={e.img} name={e.name} price={e.preco} />)
+                    data.map((e)=> <ProductCart amount="1"  img={e.img} name={e.name} price={e.preco} />)
                 }
 
 

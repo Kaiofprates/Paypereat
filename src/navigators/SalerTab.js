@@ -1,57 +1,91 @@
-import React from 'react';
+import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-//import Home from '../Screens/Saler/Home';
-//import Donation from '../Screens/Donation';
-//import CheckoutStack from './CheckoutStack';
-//import OrdersStack from './OrdersStack';
-//import Profile from '../Screens/Profile';
-import { Image, Text } from 'react-native';
 import HomeSalerStack from './Saler/HomeSalerStack';
 import OrdersStack from './Saler/OrdersStack';
 import ProfileStack from './ProfileStack';
+import ProductStack from './Saler/ProductStack';
+import { Image, Text, View } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
+
+
+function Notifications() {
+    return (
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <Text>Em breve!</Text>
+        </View>
+    );
+}
 
 const Tab = createBottomTabNavigator();
 
-export default () => {
+function MyTabs() {
     return (
         <Tab.Navigator
+            initialRouteName="Home"
+            tabBarOptions={{
+                activeTintColor: '#2BB673',
+            }}
         >
+            <Tab.Screen
+                name="Home"
+                component={HomeSalerStack}
+                options={{
+                    tabBarLabel: 'Home',
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name="home" color={color} size={size} />
+                    ),
+                }}
+            />
+            <Tab.Screen
+                name="Notifications"
+                component={Notifications}
+                options={{
+                    tabBarLabel: 'Doar',
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name="heart" color={color} size={size} />
+                    ),
+                }}
+            />
 
-            <Tab.Screen name="Home" component={HomeSalerStack} options={{
-                tabBarIcon: ({ color, size }) => (
-                    <Image source={require('../assets/Icons/TabHome/home.png')} style={{
-                        width: 25,
-                        height: 25
-                    }} />
-                )
-            }} />
+            <Tab.Screen
+                name="Produtos"
+                component={ProductStack}
+                options={{
+                    tabBarLabel: 'Produtos',
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name="apps-box" color={color} size={size} />
+                    ),
+                }}
+            />
 
-            <Tab.Screen name="Pedidos" component={OrdersStack} options={{
-                tabBarIcon: ({ color, size }) => (
-                    <Image source={require('../assets/Icons/TabOrder/order.png')} style={{
-                        width: 25,
-                        height: 25
-                    }} />
-                )
-            }} />
+            <Tab.Screen
+                name="Pedidos"
+                component={OrdersStack}
+                options={{
+                    tabBarLabel: 'Pedidos',
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name="playlist-check" color={color} size={size} />
+                    ),
+                }}
+            />
 
-<Tab.Screen name="Vendas" component={OrdersStack} options={{
-                tabBarIcon: ({ color, size }) => (
-                    <Image source={require('../assets/Icons/TabProfile/profile.png')} style={{
-                        width: 25,
-                        height: 25
-                    }} />
-                )
-            }} />
-
-            <Tab.Screen name="Profile" component={ProfileStack} options={{
-                tabBarIcon: ({ color, size }) => (
-                    <Image source={require('../assets/Icons/TabProfile/profile.png')} style={{
-                        width: 25,
-                        height: 25
-                    }} />
-                )
-            }} />
+            <Tab.Screen
+                name="Profile"
+                component={ProfileStack}
+                options={{
+                    tabBarLabel: 'Perfil',
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name="account" color={color} size={size} />
+                    ),
+                }}
+            />
         </Tab.Navigator>
+    );
+}
+
+export default () => {
+    return (
+        <MyTabs />
     );
 }

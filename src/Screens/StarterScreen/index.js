@@ -78,7 +78,7 @@ export default function StarterScreen({ navigation }) {
                         />
                 </TouchableOpacity>
             </View>
-            <Text style={styles.community}> from Leprechaum </Text>
+            <Text style={styles.community}>from Leprechaum </Text>
 
         </SafeAreaView>
     );

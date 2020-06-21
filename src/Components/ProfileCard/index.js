@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { SafeAreaView, Text, TouchableOpacity, View, Image, TextInput } from 'react-native';
+import React from 'react';
 import styled from 'styled-components';
 import mia from '../../assets/user.png';
 
@@ -34,8 +33,8 @@ export default function Profile() {
        <ProfileCard>
         <UserImage source={mia}/>
         <ProfileResume>
-            <ProfileName>Marina Ruy</ProfileName>
-            <ProfileEmail>marinamarina2015@gmail.com</ProfileEmail>
+            <ProfileName>Kelviny Henrique</ProfileName>
+            <ProfileEmail>kelvinyhenrique17@gmail.com</ProfileEmail>
         </ProfileResume>
        </ProfileCard>
     )

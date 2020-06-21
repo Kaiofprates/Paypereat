@@ -65,10 +65,9 @@ export default function ProductDetail() {
                     <DeliveredOrder>Enviado</DeliveredOrder>
                 </OrderHeader>
                 <OrderScroll>
-                    <OrderDetailProduct />
-                    <OrderDetailProduct />
-                    <OrderDetailProduct />
-                    <OrderDetailProduct />
+                    <OrderDetailProduct  productUri="https://static.tuasaude.com/media/article/bb/ad/couve_14746_l.jpg" productName="Repolho"/>
+                    <OrderDetailProduct  productUri="https://www.ibahia.com/fileadmin/user_upload/ibahia/2019/outubro/25/banana.jpg?width=1200&enable=upscale" productName="Banana"/>
+                    <OrderDetailProduct  productUri="https://www.soflor.com.br/wp-content/uploads/2014/06/cebola-roxa-50-sementes-1951-e1496865117315.jpg" productName="Cebola Roxa"/>
                 </OrderScroll>
 
                 <OrderInformationsBox>
