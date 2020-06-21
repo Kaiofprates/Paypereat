@@ -2,6 +2,7 @@ import React from 'react';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import MainStack from './src/navigators/MainStack';
 import MainTab from './src/navigators/MainTab';
+import SalerTab from './src/navigators/SalerTab';
 
 function App() {
 
@@ -17,7 +18,8 @@ function App() {
 
   return (
     <NavigationContainer  theme={MyTheme}>
-      <MainTab />
+      <SalerTab />
+     {/*  <MainTab /> */}
     </NavigationContainer>
   );
 }

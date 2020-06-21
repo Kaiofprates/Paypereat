@@ -101,9 +101,9 @@ export default function ProductDetail() {
                         onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
                     >
                         <Picker.Item label="Quantidade" value="0" />
-                        <Picker.Item label="JavaScript" value="js2" />
-                        <Picker.Item label="Seu cú" value="cu" />
-                        <Picker.Item label="" value="js" />
+                        <Picker.Item label="1" value="1" />
+                        <Picker.Item label="2" value="2" />
+                        <Picker.Item label="3" value="3" />
                     </Picker>
                     </ProductSelect>
                     
