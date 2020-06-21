@@ -77,8 +77,11 @@ export default function AddProduct() {
                 <ProductSemIdeiParaONome>
                     <ProductQuantidade placeholder="Quantidade" maxLength={6} />
                     <Picker style={{ height: 50, width: 202, color:'#cecece'}}>
-                        <Picker.Item label="Unidade de Medida" value="java" />
-                        <Picker.Item label="JavaScript" value="js" />
+                        <Picker.Item label="Unidade de Medida" value="0" />
+                        <Picker.Item label="Metros" value="1" />
+                        <Picker.Item label="Litros" value="2" />
+                        <Picker.Item label="Saca" value="3" />
+                        <Picker.Item label="Kg" value="4" />
                     </Picker>
                 </ProductSemIdeiParaONome>
 
