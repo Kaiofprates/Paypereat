@@ -63,7 +63,7 @@ export default function StarterScreen({ navigation }) {
                 <TouchableOpacity
                     style={styles.sigin}
                     onPress={() => {
-                        navigation.navigate('Register')
+                        navigation.navigate('Intro')
                     }}
                 >
                     <Text style={styles.textLogin}>Sign in</Text>
